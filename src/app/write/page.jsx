@@ -16,6 +16,7 @@ const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
 
 
 const WritePage = () => {
+
   const { status } = useSession();
   const router = useRouter();
   const quillRef = useRef(null);
@@ -66,6 +67,7 @@ const WritePage = () => {
       [{ font: [] }, { size: ['small', false, 'large', 'huge'] }],
       [{ header: [1, 2, 3, false] }],
       ['bold', 'italic', 'underline', 'strike'],
+          [{ color: [] }],
       [{ list: 'ordered' }, { list: 'bullet' }],
       ['blockquote', 'code-block'],
       ['clean'],
@@ -76,6 +78,7 @@ const WritePage = () => {
     'font', 'size',
     'header',
     'bold', 'italic', 'underline', 'strike',
+    'color',
     'list', 'bullet',
     'blockquote', 'code-block',
   ];

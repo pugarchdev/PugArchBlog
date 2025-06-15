@@ -1,14 +1,29 @@
 .container {
   margin-top: 50px;
-  padding: 20px 0px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  color: var(--softTextColor);
+  padding: 40px 20px;
+  background-color: #0f172a; /* Dark navy blue */
+  color: #e2e8f0; /* Light text for contrast */
 }
 
+.topSection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.footerLink {
+  color: #cbd5e1;
+  text-decoration: none;
+}
+
+.footerLink:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
 .info {
   flex: 1;
+  min-width: 280px;
   display: flex;
   flex-direction: column;
   gap: 14px;
@@ -22,26 +37,30 @@
 
 .logoText {
   font-size: 24px;
+  font-weight: 600;
 }
 
 .desc {
   font-weight: 300;
+  line-height: 1.6;
 }
 
 .icons {
   margin-top: 10px;
   display: flex;
-  gap: 10px;
+  gap: 14px;
 }
 
 .links {
-  flex: 1;
+  flex: 2;
   display: flex;
-  justify-content: flex-end;
-  gap: 100px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
 }
 
 .list {
+  min-width: 180px;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -50,26 +69,23 @@
 
 .listTitle {
   font-weight: bold;
+  margin-bottom: 6px;
+  color: #ffffff;
 }
 
-@media screen and (max-width: 1024px) {
-  .links {
-    gap: 50px;
-  }
-}
+/* Responsive Design */
 @media screen and (max-width: 768px) {
-  .container {
+  .topSection {
     flex-direction: column;
-    gap: 50px;
+    gap: 40px;
   }
 
   .links {
-    width: 100%;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 30px;
   }
-}
-@media screen and (max-width: 640px) {
-  .links {
-    font-size: 14px;
+
+  .list {
+    width: 100%;
   }
 }
