@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { signOut } from "next-auth/react";
 import styles from "./user.module.css";
-
+import { BASE_URL } from "@/utils/constants";
 export default function ClientDashboard({ posts, userEmail }) {
   const [isPending, startTransition] = useTransition();
   const [confirming, setConfirming] = useState(null);
@@ -16,7 +16,7 @@ export default function ClientDashboard({ posts, userEmail }) {
 
   async function deletePost(slug) {
     console.log(slug, "slug------------------------//---------");
-    const res = await fetch(`/api/posts/${encodeURIComponent(slug)}`, {
+    const res = await fetch(`${BASE_URL}/api/posts/${encodeURIComponent(slug)}`, {
       method: "DELETE",
     });
     if (res.ok) window.location.reload();

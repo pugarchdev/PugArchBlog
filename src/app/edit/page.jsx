@@ -8,7 +8,7 @@ import dynamic from "next/dynamic";
 import { supabase } from "@/utils/supabaseClient";
 import styles from '../write/writePage.module.css';
 import "react-quill/dist/quill.snow.css";
-
+import { BASE_URL } from "@/utils/constants";
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
 export default function EditPage() {
@@ -74,7 +74,7 @@ export default function EditPage() {
 
         async function fetchPost() {
             try {
-                const res = await fetch(`/api/posts/${postId}`);
+                const res = await fetch(`${BASE_URL}/api/posts/${postId}`);
                 if (!res.ok) throw new Error("Post not found");
                 const post = await res.json();
                 console.log(post, "post data --------------------------//---------------------")
@@ -119,7 +119,7 @@ export default function EditPage() {
             let imgUrl = media;
             if (file) imgUrl = await uploadToSupabase(file);
 
-            const res = await fetch(`/api/posts/${postId}`, {
+            const res = await fetch(`${BASE_URL}/api/posts/${postId}`, {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({

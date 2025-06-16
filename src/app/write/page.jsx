@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 import { supabase } from "@/utils/supabaseClient";
 import dynamic from "next/dynamic";
-
+import { BASE_URL } from "@/utils/constants";
 // Import Quill CSS
 import 'react-quill/dist/quill.snow.css';
 
@@ -141,7 +141,7 @@ const WritePage = () => {
     }
 
     try {
-      const res = await fetch("/api/posts", {
+      const res = await fetch(`${BASE_URL}/api/posts`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

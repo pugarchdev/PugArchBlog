@@ -124,7 +124,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { toast } from "react-hot-toast";
 import { useEffect, useState } from "react";
-
+import { BASE_URL } from "@/utils/constants";
 const SinglePage = ({ params }) => {
   const router = useRouter();
   const { slug } = params;
@@ -132,7 +132,7 @@ const SinglePage = ({ params }) => {
 
   const getData = async () => {
     try {
-      const res = await fetch(`/api/posts/${slug}`, {
+      const res = await fetch(`${BASE_URL}/api/posts/${slug}`, {
         cache: "no-store",
       });
 
@@ -150,7 +150,7 @@ const SinglePage = ({ params }) => {
     if (!confirmed) return;
 
     try {
-      const res = await fetch(`/api/posts/${slug}`, {
+      const res = await fetch(`${BASE_URL}/api/posts/${slug}`, {
         method: "DELETE",
       });
 
@@ -222,14 +222,14 @@ const SinglePage = ({ params }) => {
         </div>
       </div>
 
-      <div className={styles.actions}>
+      {/* <div className={styles.actions}>
         <Link href={`/blog/edit/${slug}`} className={styles.editBtn}>
           Edit
         </Link>
         <button onClick={handleDelete} className={styles.deleteBtn}>
           Delete
         </button>
-      </div>
+      </div> */}
     </>
   );
 };
