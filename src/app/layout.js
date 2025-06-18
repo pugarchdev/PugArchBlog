@@ -24,9 +24,11 @@ export default function RootLayout({ children }) {
                 <div className="wrapper">
                   <Navbar />
                   {children}
-                  <Footer />
+                
                 </div>
+                  <Footer />
               </div>
+              
             </ThemeProvider>
           </ThemeContextProvider>
         </AuthProvider>
