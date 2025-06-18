@@ -2,35 +2,37 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100px;
+  padding: 0 1rem;
+  height: 80px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .social {
   display: flex;
   gap: 10px;
-  flex: 1;
+  flex-shrink: 0;
 }
 
 .logo {
-  flex: 1;
-  text-align: center;
-  font-size: 36px;
+  font-size: 24px;
   font-weight: bold;
- 
+  text-align: center;
+  flex: 1;
 }
+
 
 .links {
   display: flex;
   align-items: center;
-  gap: 20px;
-  flex: 1;
-  font-size: 20px;
-  margin-left: 100px;
+  gap: 12px;
+  flex-shrink: 0;
 }
+
 
 @media screen and (max-width: 1280px) {
   .logo {
-    font-size: 24px;
+    font-size: 22px;
   }
   .links {
     font-size: 18px;
@@ -51,16 +53,21 @@
   }
 }
 @media screen and (max-width: 640px) {
-    .logo {
+  .logo {
     font-size: 20px;
   }
-  .links{
-    justify-content: flex-end;
+
+  .links {
+    font-size: 16px;
+    gap: 10px;
   }
+
   .link {
     display: none;
   }
-    .logoLink {
-  display: block; /* Ensures logo stays visible */
+
+  .logoLink {
+    display: block;
+  }
 }
-}
+
