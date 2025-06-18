@@ -282,31 +282,31 @@ const WritePage = () => {
           </div>
         )}
 
-        {preview && (
-          <div className={styles.preview}>
-            <div className={styles.previewHeader}>
-              <h3>Featured Image Preview</h3>
-              <button
-                className={styles.removePreview}
-                onClick={() => {
-                  setPreview("");
-                  setFile(null);
-                  setMedia("");
-                }}
-              >
-                ×
-              </button>
-            </div>
-            <Image
-              src={preview}
-              alt="Preview"
-              width={600}
-              height={300}
-              className={styles.image}
-              style={{ objectFit: 'cover' }}
-            />
-          </div>
-        )}
+       {preview && (
+  <div className={styles.preview}>
+    <div className={styles.previewHeader}>
+      <h3>Featured Image Preview</h3>
+      <button
+        className={styles.removePreview}
+        onClick={() => {
+          setPreview("");
+          setFile(null);
+          setMedia("");
+        }}
+      >
+        ×
+      </button>
+    </div>
+    <Image
+      src={preview}
+      alt="Preview"
+      width={600}
+      height={300}
+      className={styles.image}
+    />
+  </div>
+)}
+
 
         <div className={styles.editor}>
           <div className={styles.editorHeader}>
