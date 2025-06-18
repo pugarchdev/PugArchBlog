@@ -227,8 +227,13 @@
 }
 
 .image {
+   width: 100%;
+  height: auto;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+  display: block;
+  margin: 0 auto; /* centers it */
+  max-width: 600px;
 }
 
 
@@ -459,3 +464,15 @@
     border-color: #4a5568;
   }
 }
+
+@media (max-width: 640px) {
+  .preview {
+    padding: 1rem;
+  }
+
+  .image {
+    max-width: 100%;
+    border-radius: 6px;
+  }
+}
+
