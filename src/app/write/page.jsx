@@ -294,7 +294,7 @@ const WritePage = () => {
                   setMedia("");
                 }}
               >
-                
+                x
               </button>
             </div>
            <Image
