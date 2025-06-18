@@ -297,14 +297,14 @@ const WritePage = () => {
                 
               </button>
             </div>
-            <Image
-              src={preview}
-              alt="Preview"
-              width={600}
-              height={300}
-              className={styles.image}
-              style={{ objectFit: 'cover' }}
-            />
+           <Image
+  src={preview}
+  alt="Preview"
+  width={0}
+  height={0}
+  sizes="100vw"
+  className={styles.image}
+/>
           </div>
         )}
 
